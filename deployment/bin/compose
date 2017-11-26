@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+set -x
+
+NAME=metamap
+TAG=betterpath/metamap
+
+function usage() {
+    echo "Usage: ./deployment/bin/compose"
+}
+
+case "$1" in
+    "up")
+        docker rm -f $NAME | true
+        docker build . -t $TAG 
+        docker run -itd --name $NAME $TAG
+        ;;
+    *)
+        usage
+        ;;
+esac
