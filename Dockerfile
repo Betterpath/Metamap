@@ -8,4 +8,6 @@ ENV AWS_SECRET_ACCESS_KEY=${S3_SECRET}
 ADD download.sh /download.sh
 RUN /download.sh
 RUN tar xfj public_mm_linux_main_2016v2.tar.bz2
+RUN cd public_mm && ./bin/install.sh
 CMD tail -f /dev/null
+
