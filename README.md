@@ -1,4 +1,4 @@
-# MetaMap
+# Metamap
 
 ## Setup
 
